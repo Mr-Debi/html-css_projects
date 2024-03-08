@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.avtar_button_grp{
+    min-height: 100px;
+    background: #350048;
+    /* display: ; */
+}
+
+.main{
+    min-width: none;
+    /* float: left; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.avtar_button_grp .buttons{
+    display: flex;
+    position: relative;
+    color: #fff;
+    z-index: 1;
+    font-size:xx-large;
+    font-weight: 500;
+    width: 200px;
+    height: 50px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5) ;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    border-radius: 30px;
+    transition: 0.5s;
+
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.buttons::before{
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: -1;
+    animation-duration: 5s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    /* animation-play-state:; */
+}
+
+#fire::before{
+    background: url(images/fire.gif);
+    height: 50px;
+    width: 100%;
+    border-radius: 50px;
+    background-size: cover;
+}
+#water::before{
+    background: url(images/water.gif);
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+}
+#earth::before{
+    background: url(images/earth.png);
+    height: 50px;
+    width: 100%;
+    /* border-radius: 50px; */
+    background-size: cover;
+    animation-name: moving;
+}
+
+@keyframes moving{
+    0%{ top:50px;}
+    50%{top:0px;}
+    /* 100%{top:50px;} */
+}
+#wind::before{
+    background: url(images/wind.gif);
+    height: 50px;
+    width: 100%;
+    /* border-radius: 50px; */
+    background-size: cover;
+}
+
+.buttons:hover::before{
+    opacity: 1;
+}
